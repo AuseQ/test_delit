@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+
 body {
-    background-color: lightgray;
+    background-color: #fff;
+    font-family: 'Playfair Display', serif;
+    .row{
+        display: flex;
+        flex-direction: row;
+    }
+    .col{
+        display: flex;
+        flex-direction: column;
+    }
+    #submited-validation{
+        height: 5rem;
+    }
+
 }
