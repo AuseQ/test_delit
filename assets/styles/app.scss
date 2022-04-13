@@ -35,11 +35,12 @@ body {
             .field-error{
                 border-image: linear-gradient(to right, #d90505, #b33c3c) 1;
             }
-            input::placeholder {
+            ::placeholder {
                 opacity: 1;
                 font-weight: 600;
                 font-size: 14px;
-            }
+                color: black;
+            }          
         }
         textarea{
             width: 100%;
@@ -52,6 +53,7 @@ body {
             opacity: 1;
             font-weight: 600;
             font-size: 14px;
+            color: black;
         }
         
           
