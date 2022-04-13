@@ -17,18 +17,19 @@ class UserContact
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[Assert\NotBlank(message: "les champs doivent êtres remplis")]
-    #[Assert\Length(min:2, max:255, exactMessage:'Le champ "Nom" doit contenir entre 2 et 255 caractère.')]
+    #[Assert\NotBlank]
+    #[Assert\Length(min:2, max:255)]
     #[ORM\Column(type: 'string', length: 255)]
     private $user_lastname;
 
     #[Assert\NotBlank]
-    #[Assert\Length(min:2, max:255, exactMessage:'Le champ "Prénom" doit contenir entre 2 et 255 caractère.')]
+    #[Assert\Length(min:2, max:255)]
     #[ORM\Column(type: 'string', length: 255)]
     private $user_firstname;
 
     #[Assert\NotBlank]
-    #[Assert\Length(min:2, max:255, exactMessage:'Le champ "Email" doit contenir entre 2 et 255 caractère.')]
+    #[Assert\Email]
+    #[Assert\Length(min:5, max:255)]
     #[ORM\Column(type: 'string', length: 255)]
     private $user_mail;
 
@@ -43,9 +44,7 @@ class UserContact
     #[ORM\Column(type: 'datetime_immutable')]
     private $send_at;
 
-    #[Assert\Type(
-        type: "integer",
-        message: "Le numéro de téléphone n'est pas valide.",)]
+    #[Assert\Type(type: "integer")]
     #[ORM\Column(type: 'integer',length: 12)]
     private $user_phone_number;
 

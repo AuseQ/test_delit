@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DashboardController!{% endblock %}
+
+{% block body %}
+    {% for contact_request in fetched_contacts %}
+    <p>{{ contact_request.object }}</p>
+        
+    {% endfor %}
+{% endblock %}
