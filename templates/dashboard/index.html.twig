@@ -3,8 +3,36 @@
 {% block title %}Hello DashboardController!{% endblock %}
 
 {% block body %}
-    {% for contact_request in fetched_contacts %}
-    <p>{{ contact_request.object }}</p>
-        
-    {% endfor %}
+    <div id="content">
+        <h1 class"mb-5">tableau des demandes de contact</h1>
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th scope="col">Nom et Prénom</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Objet</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact_request in fetched_contacts %}
+                    <tr>
+                        <td>{{ contact_request.getUserLastname() }} {{ contact_request.getUserFirstname() }}</td>
+                        <td>{{ contact_request.getUserMail() }}</td>
+                        <td>0{{ contact_request.getUserPhoneNumber() }}</td>
+                        <td>{{ contact_request.getObject() }}</td>
+                        <td>{{ contact_request.getMessage() }}</td>
+                        <td>{{ contact_request.getSendAt()|date("d/m/Y H:i") }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('bootstrap') }}
 {% endblock %}

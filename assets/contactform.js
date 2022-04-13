@@ -10,7 +10,6 @@ form.addEventListener('submit' , function (e){
     .then(response => response.json())
     .then(json => {
         handleResponse(json);
-        console.log(json)
     })
 })
 
@@ -20,7 +19,9 @@ const handleResponse = function(response){
         case 'SUCCESS':
 
             validationMessage.innerHTML = response.html;
-            validationMessage.style.backgroundColor = "green";
+            validationMessage.style.backgroundColor = "#76D905";
+            validationMessage.style.color = "#fff";
+            console.log(validationMessage.childNodes[0].style.margin = '.5rem')
             
             break;
 

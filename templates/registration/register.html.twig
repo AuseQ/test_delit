@@ -3,15 +3,38 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <div id="content">
+        <div class="container py-5 mx-auto">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+            {{ form_start(registrationForm) }}
+                <div class="mb-3">
+                    {{ form_label(registrationForm.username, null, {
+                        'label': "Nom d'utilisateur",
+                        'label_attr': {'class': 'form-label'}
+                    }) }}
+                    {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control'}}) }}
+                </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                <div class="mb-3">
+                    {{ form_label(registrationForm.plainPassword, null, {
+                        'label': "Mot de passe",
+                        'label_attr': {'class': 'form-label'}
+                    }) }}
+                    {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(registrationForm.agreeTerms, null, {
+                        'label': "Cochez la case",
+                        'label_attr': {'class': 'form-label'}
+                    }) }}
+                    {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+                </div>
+                
+
+                <button type="submit" class="btn btn-success">S'enregistrer</button>
+            {{ form_end(registrationForm) }}
+
+        </div>
+    </div>
 {% endblock %}

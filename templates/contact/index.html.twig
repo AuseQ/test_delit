@@ -3,25 +3,27 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-    <h1>FORMULAIRE</br>DE CONTACT</h1>
-    <div id="submited-validation"></div>
-    {{ form_start(contact_form)}}
-        <div class="form-error">
-            {{ form_errors(contact_form) }}
-        </div>
-        <div class="row">
-            <div class="col">
-                {{ form_row(contact_form.user_lastname)}}
-                {{ form_row(contact_form.user_firstname)}}
+    <div id="content">
+        <h1 class="text-gradiant">FORMULAIRE</br>DE CONTACT</h1>
+        <div id="submited-validation"></div>
+        {{ form_start(contact_form)}}
+            <div class="form-error">
+                {{ form_errors(contact_form) }}
             </div>
-            <div class="col">
-                {{ form_row(contact_form.user_phone_number)}}
-                {{ form_row(contact_form.user_mail)}}
+            <div class="row">
+                <div class="col">
+                    {{ form_row(contact_form.user_lastname)}}
+                    {{ form_row(contact_form.user_firstname)}}
+                </div>
+                <div class="col">
+                    {{ form_row(contact_form.user_phone_number)}}
+                    {{ form_row(contact_form.user_mail)}}
+                </div>
             </div>
-        </div>
-        {{ form_row(contact_form.message)}}
+            {{ form_row(contact_form.message)}}
 
-    {{ form_end(contact_form) }}
+        {{ form_end(contact_form) }}
+    </div>
 {% endblock %}
 
 {% block javascripts %}
